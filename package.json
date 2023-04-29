@@ -1,8 +1,9 @@
 {
   "name": "nodejs-datasoft-portfolio-backend",
   "version": "0.1.0",
-  "description": "A minimalistic Express API developed for personal portfolio React application.",
+  "description": "Minimalistic Express API developed for personal portfolio React application.",
   "type": "module",
+  "main": "./build/src/main.js",
   "engines": {
     "node": ">= 18.12 <19"
   },
@@ -34,16 +35,19 @@
     "typescript": "~5.0"
   },
   "scripts": {
-    "start": "node build/src/main.js",
+    "start": "npm run build && node ./build/src/main.js",
+    "start:dev": "node ./build/src/main.js",
+    "dev": "npm run build:dev && npm run start:dev",
     "clean": "rimraf coverage build tmp",
-    "prebuild": "npm run lint",
-    "build": "tsc -p tsconfig.json",
-    "build:watch": "tsc -w -p tsconfig.json",
-    "build:release": "npm run clean && tsc -p tsconfig.release.json",
-    "lint": "eslint . --ext .ts --ext .mts",
+    "prebuild": "npm run eslint",
+    "build": "npm run clean && tsc -p tsconfig.release.json",
+    "build:dev": "npm run clean && tsc -p tsconfig.json",
+    "build:watch": "npm run clean && tsc -w -p tsconfig.json",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "prettier": "prettier --config .prettierrc --write ."
+    "eslint": "eslint . --ext .ts --ext .mts",
+    "prettier": "prettier --config .prettierrc .",
+    "prettier:fix": "npm run prettier -- --write"
   }
 }
