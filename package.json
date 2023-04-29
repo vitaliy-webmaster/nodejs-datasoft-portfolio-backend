@@ -15,8 +15,7 @@
     "express-validator": "^7.0.1",
     "helmet": "^6.1.5",
     "mongoose": "^7.1.0",
-    "tslib": "~2.5",
-    "rimraf": "~5.0"
+    "tslib": "~2.5"
   },
   "devDependencies": {
     "@types/compression": "^1.7.2",
@@ -30,6 +29,7 @@
     "eslint-plugin-jest": "~27.2",
     "jest": "~29.5",
     "prettier": "~2.8",
+    "rimraf": "~5.0",
     "ts-api-utils": "~0.0.44",
     "ts-jest": "~29.1",
     "typescript": "~5.0"
@@ -39,7 +39,7 @@
     "start:dev": "node ./build/src/main.js",
     "dev": "npm run build:dev && npm run start:dev",
     "clean": "rimraf coverage build tmp",
-    "build": "npm run clean && tsc -p tsconfig.release.json",
+    "build": "tsc -p tsconfig.release.json",
     "build:dev": "npm run clean && tsc -p tsconfig.json",
     "build:watch": "npm run clean && tsc -w -p tsconfig.json",
     "test": "jest",
