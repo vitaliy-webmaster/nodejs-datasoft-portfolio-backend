@@ -30,14 +30,17 @@ npm install
 
 ## Available Scripts
 
+- `start` - invoke script in production environment,
+- `start:dev` - invoke script in development mode,
 - `clean` - remove coverage data, Jest cache and transpiled files,
-- `prebuild` - lint source files and tests before building,
-- `build` - transpile TypeScript to ES6,
-- `build:watch` - interactive watch mode to automatically transpile source files,
-- `lint` - lint source files and tests,
-- `prettier` - reformat files,
+- `build` - transpile TypeScript to ES6 for production,
+- `build:dev` - interactive watch mode to automatically transpile source files,
+- `dev` - build and invoke script files in development mode,
+- `eslint` - lint source files and tests,
+- `prettier` - check files for formatting errors,
+- `prettier:fix` - check and reformat files,
 - `test` - run tests,
-- `test:watch` - interactive watch mode to automatically re-run tests
+- `test:watch` - watch mode to automatically re-run tests
 
 [ts-badge]: https://img.shields.io/badge/TypeScript-5.0-blue.svg
 [nodejs-badge]: https://img.shields.io/badge/Node.js->=%2018.12-blue.svg
